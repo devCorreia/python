@@ -118,3 +118,39 @@ print(music)
 # 7 - Remover item no dicionário 
 music.pop("duration")
 print(music)
+
+
+
+# Dicionario aninhado 
+import pprint
+
+musicDict ={
+  "crime pays":{
+    "year launch": 2019,
+    "album": ["bandana"],
+    "genre":["RAP"]  
+  },
+  "all caps":{
+    "year launch": 2004,
+    "album":["madvillainy"],
+    "genre":["RAP"]
+  },
+  "réu confesso":{
+    "year launch": 1973,
+    "album":["tim maia 1973"],
+    "genre":["MPB"]
+  }
+}
+pp = pprint.PrettyPrinter(depth=5)
+pp.pprint(musicDict)
+
+# Buscar uma informação dentro de um dicionario aninhado
+print(musicDict["crime pays"]["genre"]) 
+
+# Adicionar um novo item
+musicDict["all caps"]["singer"] = "mf doom"
+print(musicDict["all caps"])
+
+# Excluir um dicionario
+del musicDict["réu confesso"]
+pp.pprint(musicDict)
